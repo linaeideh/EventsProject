@@ -1,0 +1,417 @@
+/* Navigation Bar */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  padding: 10px 20px;
+  background-color: #f6f6f6;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  flex: 0 0 auto;
+}
+
+.logo-img {
+  height: 50px;
+  width: 180px;
+  cursor: pointer;
+}
+
+.login-btn-container {
+  flex: 0 0 auto;
+}
+
+.login-btn {
+  padding: 8px 16px;
+  background-color: #BAE6FD;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 80px;
+}
+
+.login-btn:hover {
+  background-color: #88cff5;
+  font-weight: 600;
+}
+
+.nav-items {
+  display: inline-flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex:1;
+  justify-content: center;
+}
+
+.nav-item {
+  margin: 0 15px;
+}
+
+.nav-Link,
+.nav-Link:link {
+  color: black;
+  display: block;
+  position: relative;
+  /* cursor: pointer; */
+  text-decoration: none;
+  outline: none;
+}
+
+.nav-Link:hover {
+  color: #88cff5;
+}
+
+.nav-Link-name{
+  cursor: pointer;
+}
+
+.nav-link::before {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translate(0, 10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover::before {
+  opacity: 1;
+  transform: translate(0, 5px);
+}
+
+/* Dropdown Menus */
+.dropdown {
+  position: relative;
+}
+
+.dropdown .nav-link {
+  padding-right: 15px;
+  line-height: 17px;
+}
+
+.dropdown .nav-link::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: 0;
+  border: 5px solid transparent;
+  border-top-color: #fff;
+}
+
+.Event-type-show,
+.Country,
+.Aboutus-show {
+  display: none;
+  position: absolute;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.Event-type-show {
+  right: -40px;
+  top: 35px;
+}
+
+.Aboutus-show {
+  left: -230px;
+  top: 35px;
+}
+
+.Country {
+  right: -40px;
+  top: 35px;
+}
+
+.Event-type-show.show,
+.Aboutus-show.show,
+.Country.show {
+  display: block;
+}
+
+.Event-type,
+.Aboutus-learnmore,
+.Countrys {
+  list-style: none;
+  padding: 0;
+  color: black;
+}
+
+.Event-type-item,
+.Country-item {
+  padding: 8px 12px;
+
+}
+
+.Event-type-Link,
+.Country-Link {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.Event-type-item:hover,
+.Country-item:hover {
+  background-color: #f0f0f0;
+  font-weight: 600;
+}
+
+/* Event-type-show Arrow */
+.Event-type-show::after,
+.Aboutus-show::after,
+.Country::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border: 10px solid transparent;
+  border-bottom-color: #fff;
+}
+
+.Event-type-show::before,
+.Aboutus-show::before,
+.Country::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -13px;
+  border: 13px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+  filter: blur(1px);
+}
+
+/* Dropdown Items Hover Colors */
+.Event-type li:nth-child(1):hover,
+.Countrys li:nth-child(1):hover {
+  background-color: #ffefef;
+  color: #0000ff;
+}
+
+.Event-type li:nth-child(2):hover,
+.Countrys li:nth-child(2):hover {
+  background-color: #e9ffe9;
+  color: #0000ff;
+}
+
+.Event-type li:nth-child(3):hover,
+.Countrys li:nth-child(3):hover {
+  background-color: #ededff;
+  color: #0000ff;
+}
+
+.Event-type li:nth-child(4):hover,
+.Countrys li:nth-child(4):hover {
+  background-color: #fdefdf;
+  color: #0000ff;
+}
+
+
+.Event-type-item {
+  display: flex;
+  align-items: center; /* To align icons and text vertically */
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Event-type-item svg {
+  margin-right: 10px; /* Space between icon and text */
+}
+
+.Event-type-Link {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+/* About Us Section */
+.Aboutus{
+  display: flex;
+  flex-direction: row;
+  background-color:#BAE6FD;
+}
+.Aboutus-learnmore{
+padding: 0px 10px;
+margin-right: 20px;
+text-align: left;
+/* border-right: solid black 1px; */
+background-color: white;
+}
+.Aboutus-item{
+width: 200px;
+margin: 8px 20px;
+}
+
+.Aboutus div{
+font-size: 12px;
+text-align: left;
+display: flex;
+flex-direction: column
+}
+.Aboutus-title{
+width: 250px;
+font-weight: 600;
+margin: 20px 0 20px 10px;
+}
+
+.Aboutus-item p {
+font-size: 12px;
+margin: 0;
+
+}
+
+.Aboutus-Link{
+text-decoration: none;
+color: #333;
+margin: 0px;
+}
+
+.Aboutus-Link:hover{
+font-weight: 600;
+}
+
+.Aboutus-img-learnmore{
+padding: 20px 20px 20px 5px;
+}
+.Aboutus-img{
+border-radius: 4px;
+margin-bottom: 10px;
+}
+.learn-more{
+text-decoration: none;
+
+font-weight: 500;
+}
+
+.learn-more:hover{
+color: #0000ff;
+font-weight: 400;
+}
+
+/* Country Dropdown */
+.Country-item {
+  display: flex;
+  align-items: center;
+}
+
+.flag-icon {
+  width: 20px;
+  height: auto;
+  margin-right: 8px;
+}
+
+.Country-Link {
+  font-size: 16px;
+  text-decoration: none;
+  color: #333;
+}
+
+.arrow {
+  font-size: 10px;
+  margin-left: 7px;
+}
+
+.navicon {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #fff; 
+  }
+
+  .nav-items {
+    display: none; 
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-items.show {
+    display: flex; 
+  }
+
+  .nav-items.hamburger {
+    display: flex; 
+  }
+
+  .nav-item {
+    margin: 10px 0; 
+  }
+
+  .navicon {
+    display: block; 
+  }
+
+
+
+
+.Event-type-show.m,
+.Aboutus-show.m,
+.Country.m
+{
+  display: block;
+  position:static;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.Event-type-show::before,
+.Aboutus-show::before,
+.Country::before {
+  border-bottom-color: rgb(255, 255, 255);
+}
+
+.Aboutus{
+  display: flex;
+  flex-direction: column;
+  background-color:#BAE6FD;
+}
+
+.Aboutus-learnmore{
+  padding: 0px 10px;
+  margin-right: 20px;
+  text-align: left;
+  /* border-right: solid black 1px; */
+  background-color: #BAE6FD;
+  }
+
+  .Aboutus-img-learnmore{
+    padding: 20px 30px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .navicon.open + .nav-items {
+    display: flex; 
+  }
+}

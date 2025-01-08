@@ -1,0 +1,111 @@
+.card-container {
+    display: flex;
+    gap: 10px;
+    max-width: 100vh;
+    /* flex-wrap: nowrap; */
+    animation: text3D 1s ease-out forwards;
+  }
+  
+  .card {
+    width: 25%;
+    transition: transform 0.3s ease;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  /* تخصيص لكل صورة */
+  .card:nth-child(1) {
+    transform: rotate(-20deg) translate(15px, 30px);
+    filter: blur(0.4px);
+    z-index: 1;
+  }
+  
+  .card:nth-child(2) {
+    transform: rotate(0deg) translate(0, 0);
+    z-index:0;
+    filter: none;
+  }
+  
+  .card:nth-child(3) {
+    transform: rotate(20deg) translate(-10px, 20px);
+  
+    z-index: 1;
+  }
+
+  .card:nth-child(4) {
+    transform: rotate(50deg) translate(-60px, 130px);
+  
+    z-index: 0;
+  }
+  /* تخصيص للصورة الوسطى */
+  .card.middle {
+    width: 40%; /* عرض أكبر للصورة في المنتصف */
+    transform: scale(1.1); /* تكبير الصورة الوسطى قليلاً */
+  }
+  
+  @keyframes ticket-down {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+      transform: rotate(90deg) translate(130%, 130%);
+    }
+  }
+  @keyframes ticket-up {
+    0% {
+       transform: rotate(90deg) translate(110%, 100%);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  .card-container.scroll-rotate-down {
+    animation: ticket-down 1s forwards;
+    
+    
+  }
+  
+  .card-container.scroll-rotate-up {
+    animation: ticket-up 1s forwards;
+   
+  }
+  
+
+  /* عند التمرير */
+.card-container.scroll-rotate-down .card:nth-child(1) {
+    transform: translate(0px, -50px) scale(1); /* تكبير التذكرة الأولى وتحريكها */
+    z-index: 1;
+    opacity: 1; /* وضوح كامل للتذكرة الأولى */
+  }
+  
+  .card-container.scroll-rotate-down .card:nth-child(2) {
+    transform: translate(0px, 10px) scale(0.95); /* تقليل الحجم قليلاً للتذكرة الثانية */
+    z-index: 2;
+    opacity: 0.9; /* شفافية أقل */
+  }
+  
+  .card-container.scroll-rotate-down .card:nth-child(3) {
+    transform: translate(0px, 60px) scale(0.9); /* تصغير الحجم للتذكرة الثالثة */
+    z-index: 2;
+    transform: rotate(180deg);
+    /* margin-right: 80px; */
+    opacity: 0.8; /* شفافية أكبر */
+  }
+  
+  /* .card-container.scroll-rotate-down .card:nth-child(4) {
+    transform: translate(0px, 90px) scale(0.85);
+    z-index: 4;
+    opacity: 0.7;
+  } */
+  
+  /* إضافة تحريك للانتقال من وضعية لأخرى */
+  .card-container.scroll-rotate-up .card:nth-child(1),
+  .card-container.scroll-rotate-up .card:nth-child(2),
+  .card-container.scroll-rotate-up .card:nth-child(3),
+  .card-container.scroll-rotate-up .card:nth-child(4) {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
